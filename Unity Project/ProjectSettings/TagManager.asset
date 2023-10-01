@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Banana
   - Trap
+  - Trophee
+  - Void
   layers:
   - Default
   - TransparentFX
