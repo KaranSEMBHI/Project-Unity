@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class IntroScene : MonoBehaviour
 {
@@ -12,5 +13,6 @@ public class IntroScene : MonoBehaviour
         // Dit wordt meestal gebruikt om naar een andere game- of niveauscene te gaan.
         SceneManager.LoadSceneAsync(1);
     }
+
 }
 

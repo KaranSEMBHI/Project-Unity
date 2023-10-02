@@ -13,10 +13,10 @@ public class PlayerMovement : MonoBehaviour
 
     private enum MovementState
     {
-        idle,
-        running,
-        jumping,
-        falling
+        idle,       // Staat stil
+        running,    // Aan het rennen
+        jumping,    // Springt
+        falling     // Valt
     }
 
     // Variabele om te controleren of de speler de grond raakt
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Variabele voor de horizontale input van de speler
     private float horizontaleInput = 0f;
 
-    private bool hasJumped = false; // Add this variable to track if the player has jumped
+    private bool hasJumped = false; // Voeg deze variabele toe om bij te houden of de speler heeft gesprongen
 
     void Start()
     {
@@ -47,13 +47,13 @@ public class PlayerMovement : MonoBehaviour
         // Springen als de spatiebalk wordt ingedrukt, de speler op de grond staat, en nog niet heeft gesprongen
         if (raaktDeGrond)
         {
-            hasJumped = false; // Reset the flag to false when touching the ground
+            hasJumped = false; // Reset de vlag naar false wanneer de speler de grond raakt
         }
 
         if (raaktDeGrond && Input.GetKeyDown(KeyCode.Space) && !hasJumped)
         {
             rb.AddForce(Vector2.up * sprongKracht, ForceMode2D.Impulse);
-            hasJumped = true; // Set the flag to true after jumping
+            hasJumped = true; // Zet de vlag naar true na het springen
         }
 
         UpdateAnimationState();
